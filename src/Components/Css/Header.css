@@ -1,0 +1,204 @@
+.headerDiv {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  /* background-color: #000000; */
+  color: rgb(255, 255, 255);
+  padding: 10px 150px;
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  /* box-shadow: 5px 8px 8px -6px rgba(0,0,0,0.5); */
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+
+.headerDiv.scrollNav {
+  background-color: #000000;
+  box-shadow: 5px 8px 8px -6px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo img {
+  margin-top: 1px;
+  width: 130px;
+}
+
+.nav-menu {
+  width: 100%;
+}
+
+.nav-menu .menu-bar {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clear: both;
+  /* margin-top: -1px; */
+}
+
+.nav-menu .menu-bar li {
+  list-style: none;
+  margin: 20px 20px 0 35px;
+}
+
+.nav-menu .menu-bar li a {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+}
+
+.nav-menu .menu-bar li a::before {
+  position: absolute;
+  bottom: -98%;
+  width: 0;
+  height: 2px;
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
+  content: "";
+}
+
+.nav-menu .menu-bar li a:hover::before {
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.bars {
+  width: 100px;
+  position: relative;
+}
+
+.bars_line {
+  display: none;
+  position: absolute;
+  top: 6px;
+  right: -225px;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.barsLine {
+  width: 45px;
+  height: 3px;
+  background: #fe8c00;
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.widthTop {
+  width: 50px;
+}
+
+.widthBottom {
+  width: 35px;
+}
+
+/* scroll button  */
+
+.scrollButton .fa-angle-up{
+  font-size: 41px;
+  position: fixed;
+  /* bottom: 30px; */
+  bottom: -100%;
+  right: 20px;
+  color: #FFFFFF;
+  width: 50px;
+  height: 50px;
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
+  border-radius: 5px;
+  transition: 0.5s ease;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 500;
+}
+
+.scrollButton .fa-angle-up.activeScroll{
+    bottom: 30px;
+}
+
+/* ************************ Button Css ***************************** */
+.button_style {
+  padding: 14px 35px;
+  margin-top: -12px;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.01rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #fe8c00;
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
+  color: #ffffff;
+}
+
+.button_style:hover {
+  background: #fe8c00;
+  background: -webkit-linear-gradient(to left, #f83600, #fe8c00);
+  background: linear-gradient(to left, #f83600, #fe8c00);
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1460px) {
+  .headerDiv {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .headerDiv {
+    padding: 10px 20px;
+  }
+
+  .button_style {
+    padding: 10px 25px;
+  }
+
+  .nav-menu .menu-bar li {
+    margin: 20px 10px 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bars_line {
+    display: block;
+    right: 0;
+  }
+
+  .nav-menu .menu-bar {
+    width: 100%;
+    height: 420px;
+    position: absolute;
+    top: 82px;
+    left: -100%;
+    right: 0;
+    background-color: rgb(4, 4, 4);
+    display: grid;
+    text-align: center;
+    padding-bottom: 10px;
+    transition: 0.5s ease-in-out;
+    z-index: 5;
+  }
+
+  .menu-bar.active {
+    left: 0;
+  }
+
+  .button_style {
+    padding: 14px 100px;
+  }
+
+  .nav-menu .menu-bar li a:hover::before {
+    display: none;
+  }
+}
